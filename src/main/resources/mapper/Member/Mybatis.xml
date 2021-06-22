@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.page.demo.dao.Mappers">
+    <resultMap type="com.page.demo.dto.MemberDTO" id="dto">
+		<result property="num" column="num"/>
+		<result property="id" column="id"/>
+		<result property="pw" column="pw"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="mobile" column="mobile"/>
+		<result property="address" column="address"/>
+	</resultMap>
+
+	<insert id="join">
+		insert into member values(num_seq.nextval, #{id}, #{pw}, #{name}, #{email}, #{address}, #{mobile})
+	</insert>
+	</mapper>
